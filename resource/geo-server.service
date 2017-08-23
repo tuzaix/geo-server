@@ -1,0 +1,14 @@
+[Unit]
+Description=geo-server daemon
+After=network.target
+
+[Service]
+LimitNOFILE=65535
+User=nice
+Group=nice
+ExecStart=/home/nice/geo-server/bin/geo-server --conf=/home/nice/geo-server/conf/geo.conf
+Restart=always
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
